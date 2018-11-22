@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:28:20 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/22 12:32:06 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/22 13:41:32 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,12 @@ int         read_file(int fd, char **content)
     {
         if (ret < 0)
             return (-1);
+        buff[ret] = '\0';
         if (!tmp)
-            tmp = 
+            if (!(tmp = (char*)ft_memalloc(1)))
+               return (-1);
+        while
+        if ((res = 
 
     }
 }
