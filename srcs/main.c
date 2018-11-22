@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 11:57:22 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/22 12:45:42 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/22 13:56:17 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int     main(int ac, char **av)
     int     ret;
     char    *content;
 
+    ret = -42;
+    fd = -42;
     if (ac == 2)
         if ((fd = open(av[1], O_RDONLY)) > 0)
             if ((ret = read_file(fd, &content)) > 0)
