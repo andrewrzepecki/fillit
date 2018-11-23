@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:35:43 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/23 17:07:19 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/23 18:06:15 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,18 @@
 
 #include "../libft/libft.h"
 
-int     check_line(char *line);
-int     read_file(int fd, char **content);
-int     ft_print_errors(int ac, int fd, int ret);
-void    ft_print_solution(char *content, int ret);
+typedef struct		s_tetri
+{
+	char			**tetrimino;
+	int				index;
+	struct s_tetri	*next;
+}					t_tetri;
+
+t_tetri	*lst_new(char **tetri, int index);
+void    lst_add_back(t_tetri **lst, t_tetri *new);
+void    lst_iter(t_tetri *lst, void (*f)(t_tetri *ielem));
+void    print_node(t_tetri *lst);
+void	tab_free(char **tab);
+int		check_line(char *line);
 
 #endif

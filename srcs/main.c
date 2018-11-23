@@ -6,13 +6,14 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 14:23:13 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/23 17:03:34 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/23 18:06:09 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
-static int  read_file(int fd, char *line)
+static int  read_file(int fd, char *line, char **tetris)
 {
     int ret;
     int i;
@@ -24,17 +25,25 @@ static int  read_file(int fd, char *line)
         while (++i < 4)
         {
             ret = get_next_line(fd, &line);
-            if (!ft_check_line(line))
-                return (1);
+            if (!check_line(line))
+			{
+             	printf("error check_line\n");
+			 	return (1);
+			}
             tetris[i] = ft_strdup(line);
             free(line);
         }
+		ft_putstrtab(tetris);
       /*  if (!check_tetris(tetris, lst))
             return (1); */
-        if ((ret = get_next_line(fd, &line)) < 0)
+        ret = get_next_line(fd, &line);
+        if (ret == -1 || (ret != 0  && *line))
+		{
+			ft_strdel(&line);
             return (1);
-        if (ft_strlen(line) != 1 && line[0] != '\n')
-            return (1);
+		}
+		if (ret != 0)
+			ft_strdel(&line);
     }
     return (0);
 }
@@ -52,11 +61,14 @@ int     main(int ac, char **av)
         return (1);
     if (ac == 2)
         if ((fd = open(av[1], O_RDONLY)) > 0)
-            if (read_file(fd, line, tetris))
+		{
+         	printf("fd : %d\n", fd);
+		 	if (read_file(fd, line, tetris))
             {
                 ft_putstr_fd("error\n", 2);
                 return (1);
             }
+		}
     /*if (ft_print_errors(ac, fd, ret))
         return (1);
     else
