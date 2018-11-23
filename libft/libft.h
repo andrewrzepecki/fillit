@@ -6,7 +6,7 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 19:12:29 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/13 11:01:28 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/23 17:17:22 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include "get_next_line.h"
 
 typedef struct		s_list
 {

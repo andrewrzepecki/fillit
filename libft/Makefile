@@ -6,13 +6,14 @@
 #    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
-#    Updated: 2018/11/12 12:48:09 by anrzepec         ###   ########.fr        #
+#    Updated: 2018/11/23 17:18:21 by andrewrze        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 	= 	libft.a
 
-SRC 	= ft_atoi.c \
+SRC 	= get_next_line.c \
+		  ft_atoi.c \
 		  ft_bzero.c \
 		  ft_isalnum.c \
 		  ft_isalpha.c \
