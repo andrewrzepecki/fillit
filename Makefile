@@ -6,13 +6,13 @@
 #    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
-#    Updated: 2018/11/21 23:37:34 by andrewrze        ###   ########.fr        #
+#    Updated: 2018/11/23 17:06:29 by andrewrze        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 	= 	fillit
 
-SRC 	= main.c \
+SRC 	=  srcs/main.c \
 
 OBJS	=	$(SRC:.c=.o)
 
