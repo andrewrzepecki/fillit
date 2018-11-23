@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:01:03 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/23 14:56:56 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/23 20:09:33 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ char	**tab_cpy(char **tab)
 	i = 0;
 	while (tab[i])
 		i++;
-	if (!(cpy = (char**)ft_memalloc(sizeof(char*) * (i + 1))))
+	if (!(cpy = (char**)malloc(sizeof(char*) * (i + 1))))
 		return (NULL);
 	i = -1;
 	while (tab[++i])
 	{
-		if(!(cpy[i] = strdup(tab[i])))
+		if(!(cpy[i] = ft_strdup(tab[i])))
 			return (NULL);
 	}
 	return (cpy);

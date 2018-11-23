@@ -6,14 +6,14 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 14:23:13 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/23 18:06:09 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/23 20:00:43 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include <stdio.h>
 
-static int  read_file(int fd, char *line, char **tetris)
+static int  read_file(int fd, char *line, char **tetris, t_tetri **lst)
 {
     int ret;
     int i;
@@ -62,8 +62,7 @@ int     main(int ac, char **av)
     if (ac == 2)
         if ((fd = open(av[1], O_RDONLY)) > 0)
 		{
-         	printf("fd : %d\n", fd);
-		 	if (read_file(fd, line, tetris))
+		 	if (read_file(fd, line, tetris, lst))
             {
                 ft_putstr_fd("error\n", 2);
                 return (1);
