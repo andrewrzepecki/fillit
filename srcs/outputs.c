@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:32:16 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/22 13:37:18 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/23 23:47:59 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,7 @@ int         ft_print_errors(int ac, int fd, int ret)
     }
     else if (ret == -1)
     {
-        ft_putstr_fd("read() error\n", 0);
-        return (1);
-    }
-    else if (ret == -2)
-    {
-        ft_putstr_fd("Invalid input source_file\n", 0);
+        ft_putstr_fd("error\n", 0);
         return (1);
     }
     else

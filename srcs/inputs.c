@@ -3,58 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   inputs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
+/*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 12:28:20 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/23 20:09:27 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/11/22 14:23:13 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/11/24 00:43:57 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		add_elem(char **tetris, t_tetri **lst)
-{
-	char		**tmp;
-	t_tetri		*new;
-	static int	index;
-
-	if (tmp = reduce_tetris(tetris))
-		return (0);
-	if (!(new = lst_new(tmp, index)))
-		return (0);
-	lst_add_back(lst, new);
-	return (1);
-}
-
-int		count_hash(char **tetris)
-{
-	int x;
-	int y;
-	int hash;
-
-	x = 0;
-	hash = 0;
-	while (x < 4)
-	{
-		y = -1;
-		while (tetris[x][++y])
-			if (tetris[x][y] == '#')
-				hash++;
-		x++;
-	}
-	return (hash);
-}
-
-int		check_tetris(char **tetris, t_tetri **lst)
-{
-	if (count_hash(**tetris) != 4)
-		return (0);
-	if (add_elem(tetris, lst))
-		return (0);
-	return (1);
-}
-
-int  	check_line(char *line)
+static int      check_line(char *line)
 {
     int i;
 
@@ -69,3 +27,50 @@ int  	check_line(char *line)
         return (0);
     return (1);
 }
+
+static int      get_tetris(int fd, *line, char **tetris)
+{
+    int i;
+
+    i = 0;
+    while (i < 4)
+    {
+        get_next_line(fd, &line);
+        if (!check_line(line))
+            return (-1);
+        if (!(tetris[i] = ft_strdup(line)))
+            return (-1);
+        ft_strdel(&(*line));
+        i++;
+    }
+    return (1);
+}    
+
+int             read_file(int fd, char *line, char **tetris, t_tetri **lst)
+{
+    int index;
+    int ret;
+    int i;
+
+    ret = 1;
+    index = 0;
+    while (ret)
+    {
+        if ((ret = get_tetris(fd, line, tetris) == -1)
+            return (-1);
+		ft_putstrtab(tetris);
+        index++;
+      /*  if (!check_tetris(tetris, lst, index))
+            return (1); */
+        ret = get_next_line(fd, &line);
+        if (ret == -1 || (ret != 0  && *line))
+		{
+			ft_strdel(&line);
+            return (-1);
+		}
+		if (ret != 0)
+			ft_strdel(&line);
+    }
+    return (0);
+}
+
