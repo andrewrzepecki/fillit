@@ -6,7 +6,7 @@
 #    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
-#    Updated: 2018/11/24 17:59:38 by anrzepec         ###   ########.fr        #
+#    Updated: 2018/11/24 18:32:31 by anrzepec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,10 +38,16 @@ $(LIB):
 $(NAME):	$(OBJS)
 			$(CC) -o $(NAME) $(OBJS) $(LIB)
 
-clean:
+fcleanlib:  cleanlib
+			make fclean -C libft/
+
+cleanlib:
+			make clean -C libft/
+
+clean:		cleanlib
 			$(RM) $(OBJS)
 
-fclean:		clean
+fclean:		fcleanlib clean
 			$(RM) $(NAME)
 
 re:			fclean all
