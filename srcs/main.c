@@ -6,12 +6,11 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 14:23:13 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/24 00:41:03 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/24 02:12:37 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 int     main(int ac, char **av)
 {

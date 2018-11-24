@@ -6,7 +6,7 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 14:23:13 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/24 00:43:57 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/24 02:16:36 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,21 +56,20 @@ int             read_file(int fd, char *line, char **tetris, t_tetri **lst)
     index = 0;
     while (ret)
     {
-        if ((ret = get_tetris(fd, line, tetris) == -1)
+        if ((ret = get_tetris(fd, line, tetris) == -1))
             return (-1);
 		ft_putstrtab(tetris);
         index++;
-      /*  if (!check_tetris(tetris, lst, index))
+      /*  if (!set_tetris(tetris, lst, index))
             return (1); */
         ret = get_next_line(fd, &line);
         if (ret == -1 || (ret != 0  && *line))
 		{
 			ft_strdel(&line);
             return (-1);
-		}
+        }
 		if (ret != 0)
 			ft_strdel(&line);
     }
     return (0);
 }
-
