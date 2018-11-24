@@ -6,7 +6,7 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 19:12:29 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/23 17:17:22 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/24 01:08:14 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,5 +154,7 @@ int					ft_stralpha(char const *s);
 int					ft_strupper(char const *s);
 
 int					ft_strlower(char const *s);
+
+int                 char_count(char *s, char c);
 
 #endif
