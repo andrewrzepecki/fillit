@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:28:20 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/24 14:31:15 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/24 18:00:54 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,24 @@ static int          check_tetris(char **tetris)
         }
         x++;
     }
-    if (count == 6)
+    if (count > 5)
         return (1);
     else
         return (0);
 }
 
-static t_tetri      *reduce_tetris(char **tetris)
+static char         **reduce_tetris(char **tetris)
 {
+    char **red;
+
+    red = NULL;
     if (check_tetris(tetris))
     {
-        ft_putstr("yipee\n");
-        return (1);
+        //reduce tetris into **red;
+        ft_putstr("Valid Tetriminos\n");
+        return (tetris);
     }
-    return (0);
+    return (NULL);
 
 }
 
@@ -71,14 +75,17 @@ int		            set_tetris(char **tetris, t_tetri **lst, int index)
     int         count;
     int         i;
 
-    i = -1;
+    i = 0;
+    lst = NULL;
     count = 0;
-    while (++i < 4)
-        count += char_count(tetris[i]);
+    new = NULL;
+    while (++i < 5)
+        count += char_count(tetris[i], '#');
     if (count != 4)
         return (0);
-    if (!reduce_tetris(tetris))
+    if (!(tmp = reduce_tetris(tetris)))
         return (0);
+    index++;
    // if (!(new = lst_new(tmp, index)))
      //   return (0);
    // lst_add_back(lst, new);

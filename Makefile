@@ -6,13 +6,16 @@
 #    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
-#    Updated: 2018/11/23 17:06:29 by andrewrze        ###   ########.fr        #
+#    Updated: 2018/11/24 17:59:38 by anrzepec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 	= 	fillit
 
 SRC 	=  srcs/main.c \
+		   srcs/outputs.c \
+		   srcs/inputs.c \
+		   srcs/checks.c
 
 OBJS	=	$(SRC:.c=.o)
 
@@ -22,15 +25,18 @@ CFLAGS	+=	-Werror -Wall -Wextra
 
 RM		=	rm -f
 
-LIB		=	ar rc
+LIB		=	libft/libft.a
 
-all:		$(NAME)
+all:		$(LIB) $(NAME)
 
 %.o:		%.c	
-			$(CC) $(CFLAGS) -c $< -o $@
+			$(CC) $(CFLAGS) -c $< -o $@ -Iincludes
+
+$(LIB):	
+			make -C libft/
 
 $(NAME):	$(OBJS)
-			$(CC) $(NAME) $(OBJS)
+			$(CC) -o $(NAME) $(OBJS) $(LIB)
 
 clean:
 			$(RM) $(OBJS)

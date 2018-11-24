@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:32:16 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/23 23:47:59 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/24 17:42:30 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int         ft_print_errors(int ac, int fd, int ret)
         return (0);
 }
 
-void        ft_print_solution(char *content, int ret)
+/*void        ft_print_solution(char *content, int ret)
 {
     //Imprimer la solution
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 14:23:13 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/24 02:12:37 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/24 17:41:23 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int     main(int ac, char **av)
     t_tetri **lst;
 
     fd = -42;
-    if (!(tetris = (char**)ft_memalloc(sizeof(char*) * 5)) \
+    ret = -1;
+    lst = NULL;
+    if (!(tetris = (char**)ft_memalloc(sizeof(char*) * 6)) \
             || !(line = (char*)ft_memalloc(1)))
         return (1);
     if (ac == 2)
@@ -29,6 +31,6 @@ int     main(int ac, char **av)
 		    ret = read_file(fd, line, tetris, lst);
     if (ft_print_errors(ac, fd, ret))
         return (1);
-  //ft_print_solution(solve_fillit(&list, &content));
+  //ft_print_solution(solve_fillit(lst, ret));
   return (0);
 }

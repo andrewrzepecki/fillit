@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:35:43 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/24 02:05:16 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/24 16:43:14 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void    lst_iter(t_tetri *lst, void (*f)(t_tetri *ielem));
 void    print_node(t_tetri *lst);
 void	tab_free(char **tab);
 char	**tab_cpy(char **tab);
-int		set_tetris(char **tetris, t_tetri **lst);
-int		check_line(char *line);
+int     ft_print_errors(int ac, int fd, int ret);
+int		set_tetris(char **tetris, t_tetri **lst, int index);
+int     read_file(int fd, char *line, char **tetris, t_tetri **lst);
 
 #endif
