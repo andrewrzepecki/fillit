@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:32:16 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/24 17:42:30 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/26 17:38:05 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,18 @@ int         ft_print_errors(int ac, int fd, int ret)
     }
     else
         return (0);
+}
+
+void			ft_tabprint(char **tab)
+{
+	int x;
+
+	x = 0;
+	while (tab[x])
+	{
+		ft_putendl(tab[x]);
+		x++;
+	}
 }
 
 /*void        ft_print_solution(char *content, int ret)

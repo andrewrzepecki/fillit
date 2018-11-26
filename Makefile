@@ -6,7 +6,7 @@
 #    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
-#    Updated: 2018/11/24 18:32:31 by anrzepec         ###   ########.fr        #
+#    Updated: 2018/11/26 19:39:51 by anrzepec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME 	= 	fillit
 SRC 	=  srcs/main.c \
 		   srcs/outputs.c \
 		   srcs/inputs.c \
-		   srcs/checks.c
+		   srcs/checks.c \
+		   srcs/reduce_tools.c
 
 OBJS	=	$(SRC:.c=.o)
 
