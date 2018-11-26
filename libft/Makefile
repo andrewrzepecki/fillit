@@ -6,7 +6,7 @@
 #    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
-#    Updated: 2018/11/24 02:20:17 by anrzepec         ###   ########.fr        #
+#    Updated: 2018/11/26 18:35:06 by ccepre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,8 @@ SRC 	= char_count.c \
 		  ft_strnum.c \
 		  ft_stralpha.c \
 		  ft_strupper.c \
-		  ft_strlower.c 
+		  ft_strlower.c \
+		  ft_putstrtab.c
 
 OBJS	=	$(SRC:.c=.o)
 
