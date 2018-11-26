@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:30:12 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/23 18:00:25 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/26 18:41:32 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,5 @@ int main()
 	ft_putendl("Display of the input : \n-------------------");
 	lst_iter(*lst, &print_node);
 	ft_putendl("---------------------");
-//	fillit_solver(lst);
+	fillit_solver(lst);
 }
