@@ -1,20 +1,82 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   reduce_tools.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 13:58:41 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/27 12:02:53 by andrewrze        ###   ########.fr       */
+/*   Created: 2018/11/26 19:30:15 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/11/27 14:44:28 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static int		count_touch(char **tetris, int x, int y)
+int		get_beg(char **tetris)
 {
-	int	c;
+	int i;
+
+	i = 1;
+	while (i < 5)
+	{
+		if (char_count(tetris[i], '#'))
+			return (i);
+		i++;
+	}
+	return (0);
+}
+
+int		get_start(char **tetris)
+{
+	int start;
+	int tmp;
+	int x;
+	int y;
+
+	x = 1;
+	start = 6;
+	while (x < 5)
+	{
+		y = 0;
+		tmp = 42;
+		while (tetris[x][y])
+		{
+			if (tetris[x][y] == '#' && tmp == 42)
+				tmp = y;
+			y++;
+		}
+		if (tmp < start)
+			start = tmp;
+		x++;
+	}
+	return (start);
+}
+
+int		get_end(char **tetris)
+{
+	int x;
+	int y;
+	int tmp;
+	int end;
+
+	x = 1;
+	end = 0;
+	while (x < 5)
+	{
+		y = ft_strlen(tetris[x]) - 1;
+		while (tetris[x][y] != '#' && y >= 0)
+			y--;
+		tmp = y;
+		if (tmp > end)
+			end = tmp;
+		x++;
+	}
+	return (end);
+}
+
+int		count_touch(char **tetris, int x, int y)
+{
+	int		c;
 
 	c = 0;
 	if (tetris[x + 1][y] == '#')
@@ -28,11 +90,11 @@ static int		count_touch(char **tetris, int x, int y)
 	return (c);
 }
 
-static int		check_tetris(char **tetris)
+int		check_tetris(char **tetris)
 {
-	int	x;
-	int	y;
-	int	count;
+	int		x;
+	int		y;
+	int		count;
 
 	x = 1;
 	count = 0;
@@ -51,65 +113,4 @@ static int		check_tetris(char **tetris)
 		return (1);
 	else
 		return (0);
-}
-
-static char		**reduce_tetris(char **tetris, int height)
-{
-	int		i;
-	int		start;
-	int		end;
-	int		beg;
-	char	**red;
-
-	red = NULL;
-	if (check_tetris(tetris))
-	{
-		if (!(red = (char**)malloc(sizeof(char*) * (height + 1))))
-			return (NULL);
-		start = get_start(tetris);
-		end = get_end(tetris);
-		beg = get_beg(tetris);
-		i = -1;
-		while (++i < height)
-		{
-			if (!(red[i] = ft_strndup(tetris[beg] + start, (end - start + 1))))
-				return (NULL);
-			beg++;
-		}
-		red[i] = NULL;
-		return (red);
-	}
-	return (NULL);
-}
-
-int				set_tetris(char **tetris, t_tetri **lst, int index)
-{
-	char		**tmp;
-	int			height;
-	int			count;
-	int			i;
-	int			c;
-
-	i = 0;
-	count = 0;
-	height = 0;
-	c  = 0;
-	while (++i < 5)
-	{
-		if ((c = char_count(tetris[i], '#')))
-			height++;
-		count += c;
-	}
-	if (count != 4)
-		return (0);
-	if (!(tmp = reduce_tetris(tetris, height)))
-		return (0);
-    ft_tabprint(tmp);
-    ft_putchar('\n');
-	index++;
-    lst = NULL;
-	// if (!(new = lst_new(tmp, index)))
-	//   return (0);
-	// lst_add_back(lst, new);
-	return (1);
 }

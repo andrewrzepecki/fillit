@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:35:43 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/27 11:47:33 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/27 14:47:51 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ int		get_start(char **tetris);
 int		get_end(char **tetris);
 int		get_beg(char **tetris);
 int		fillit_solver(t_tetri **lst);
+int		check_tetris(char **tetris);
 
 #endif

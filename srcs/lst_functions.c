@@ -6,15 +6,13 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:01:03 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/26 18:40:42 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/27 15:28:13 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "fillit.h"
-//#include "libft2.h"
 
-char	**tab_cpy(char **tab)
+char		**tab_cpy(char **tab)
 {
 	char **cpy;
 	int i;
@@ -27,9 +25,10 @@ char	**tab_cpy(char **tab)
 	i = -1;
 	while (tab[++i])
 	{
-		if(!(cpy[i] = ft_strdup(tab[i])))
+		if (!(cpy[i] = ft_strdup(tab[i])))
 			return (NULL);
 	}
+	cpy[i] = NULL;
 	return (cpy);
 }
 
@@ -46,7 +45,7 @@ t_tetri	*lst_new(char **tetri, int index)
 	return (new);
 }
 
-void	lst_add_back(t_tetri **lst, t_tetri *new)
+void		lst_add_back(t_tetri **lst, t_tetri *new)
 {
 	t_tetri *current;
 
@@ -68,7 +67,7 @@ void	lst_add_back(t_tetri **lst, t_tetri *new)
 	current->next->next = NULL;
 }
 
-void	lst_iter(t_tetri *lst, void (*f)(t_tetri *ielem))
+void		lst_iter(t_tetri *lst, void (*f)(t_tetri *ielem))
 {
 	t_tetri *cpy;
 
@@ -85,7 +84,7 @@ void	lst_iter(t_tetri *lst, void (*f)(t_tetri *ielem))
 	}
 }
 
-void	print_node(t_tetri *lst)
+void		print_node(t_tetri *lst)
 {
 	int i;
 

@@ -6,7 +6,7 @@
 #    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
-#    Updated: 2018/11/26 19:39:51 by anrzepec         ###   ########.fr        #
+#    Updated: 2018/11/27 14:51:05 by anrzepec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRC 	=  srcs/main.c \
 		   srcs/outputs.c \
 		   srcs/inputs.c \
 		   srcs/checks.c \
-		   srcs/reduce_tools.c
+		   srcs/set_tetris.c \
+		   srcs/lst_functions.c
 
 OBJS	=	$(SRC:.c=.o)
 
