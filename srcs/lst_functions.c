@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:01:03 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/27 15:28:13 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/27 17:54:30 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,17 @@ void		print_node(t_tetri *lst)
 	ft_putnbr(lst->index);
 	ft_putendl(" : ");
 	ft_putstrtab(lst->tetrimino);
+}
+
+size_t	ft_lstlen(t_tetri *lst)
+{
+	size_t	size;
+
+	size = 0;
+	while (lst)
+	{
+		size++;
+		lst = lst->next;
+	}
+	return (size);
 }
