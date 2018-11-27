@@ -6,11 +6,10 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 13:58:41 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/26 19:56:37 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/27 12:02:53 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "fillit.h"
 
 static int		count_touch(char **tetris, int x, int y)
@@ -68,15 +67,12 @@ static char		**reduce_tetris(char **tetris, int height)
 		if (!(red = (char**)malloc(sizeof(char*) * (height + 1))))
 			return (NULL);
 		start = get_start(tetris);
-		printf("start: %d\n", start);
 		end = get_end(tetris);
-		printf("end: %d\n", end);
 		beg = get_beg(tetris);
-		printf("first string to dup: %d\n", beg);
 		i = -1;
 		while (++i < height)
 		{
-			if (!(red[i] = ft_strndup(tetris[i], end - start + 1)))
+			if (!(red[i] = ft_strndup(tetris[beg] + start, (end - start + 1))))
 				return (NULL);
 			beg++;
 		}
@@ -89,21 +85,18 @@ static char		**reduce_tetris(char **tetris, int height)
 int				set_tetris(char **tetris, t_tetri **lst, int index)
 {
 	char		**tmp;
-	t_tetri		*new;
 	int			height;
 	int			count;
 	int			i;
 	int			c;
 
 	i = 0;
-	lst = NULL;
 	count = 0;
 	height = 0;
-	new =  NULL;
 	c  = 0;
 	while (++i < 5)
 	{
-		if ((c = char_count(tetris[i], '#') != 0))
+		if ((c = char_count(tetris[i], '#')))
 			height++;
 		count += c;
 	}
@@ -111,9 +104,10 @@ int				set_tetris(char **tetris, t_tetri **lst, int index)
 		return (0);
 	if (!(tmp = reduce_tetris(tetris, height)))
 		return (0);
-	ft_tabprint(tmp);
-	ft_putchar('\n');
+    ft_tabprint(tmp);
+    ft_putchar('\n');
 	index++;
+    lst = NULL;
 	// if (!(new = lst_new(tmp, index)))
 	//   return (0);
 	// lst_add_back(lst, new);
