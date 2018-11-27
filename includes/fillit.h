@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:35:43 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/27 14:47:51 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/27 19:33:49 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,11 @@ int     read_file(int fd, char *line, char **tetris, t_tetri **lst);
 int		get_start(char **tetris);
 int		get_end(char **tetris);
 int		get_beg(char **tetris);
-int		fillit_solver(t_tetri **lst);
+char	**fillit_solver(t_tetri **lst);
 int		check_tetris(char **tetris);
+size_t	ft_lstlen(t_tetri *lst);
+void    tab_free(char **tab);
+int		ft_sqrt_sup(int n);
+void	ft_print_solution(char **solution);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
-#    Updated: 2018/11/27 14:51:05 by anrzepec         ###   ########.fr        #
+#    Updated: 2018/11/27 19:00:26 by ccepre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ SRC 	=  srcs/main.c \
 		   srcs/inputs.c \
 		   srcs/checks.c \
 		   srcs/set_tetris.c \
-		   srcs/lst_functions.c
+		   srcs/lst_functions.c \
+		   srcs/math.c \
+		   srcs/solver.c 
 
 OBJS	=	$(SRC:.c=.o)
 
@@ -32,7 +34,7 @@ LIB		=	libft/libft.a
 all:		$(LIB) $(NAME)
 
 %.o:		%.c	
-			$(CC) $(CFLAGS) -c $< -o $@ -Iincludes
+			$(CC) -c $< -o $@ -Iincludes
 
 $(LIB):	
 			make -C libft/

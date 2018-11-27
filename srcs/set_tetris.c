@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 13:58:41 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/27 15:33:02 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/27 15:50:46 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,15 @@ int				set_tetris(char **tetris, t_tetri **lst, int index)
 	int			height;
 	int			count;
 	int			i;
-	int			c;
 
 	i = 0;
 	count = 0;
 	height = 0;
 	while (++i < 5)
 	{
-		if ((c = char_count(tetris[i], '#')))
+		if (char_count(tetris[i], '#'))
 			height++;
-		count += c;
+		count += char_count(tetris[i], '#');
 	}
 	if (count != 4)
 		return (0);
@@ -65,7 +64,6 @@ int				set_tetris(char **tetris, t_tetri **lst, int index)
 		return (0);
 	if (!(new = lst_new(tmp, index)))
 		return (0);
-
 	lst_add_back(lst, new);
 	return (1);
 }

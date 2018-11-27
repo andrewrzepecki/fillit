@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:01:03 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/27 17:54:30 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/27 18:23:25 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char		**tab_cpy(char **tab)
 {
-	char **cpy;
-	int i;
+	char	**cpy;
+	int		i;
 
 	i = 0;
 	while (tab[i])
@@ -32,7 +32,7 @@ char		**tab_cpy(char **tab)
 	return (cpy);
 }
 
-t_tetri	*lst_new(char **tetri, int index)
+t_tetri		*lst_new(char **tetri, int index)
 {
 	t_tetri	*new;
 

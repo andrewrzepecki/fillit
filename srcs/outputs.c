@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:32:16 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/26 17:38:05 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/27 19:32:55 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,14 @@ void			ft_tabprint(char **tab)
 	}
 }
 
-/*void        ft_print_solution(char *content, int ret)
+void        ft_print_solution(char **solution)
 {
-    //Imprimer la solution
-}*/
+	int i;
+
+	i = 0;
+	while (solution[i])
+	{
+		ft_putendl(solution[i]);
+		i++;
+	}
+}
