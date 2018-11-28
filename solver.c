@@ -6,11 +6,12 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 16:37:12 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/28 12:27:18 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/28 16:09:58 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
 static int	valid_pos(char **tetris, char **grid, int *pos, int min_size)
 {
@@ -69,14 +70,14 @@ static int	recurssion(char **grid, t_tetri *lst, int min_size)
 		{
 			pos[0] = x;
 			pos[1] = y;
-			if (valid_pos(lst->tetrimino, grid, pos, min_size))
-			{
-				write_tetris(lst->tetrimino, grid, pos, lst->index + 64);
-				if (recurssion(grid, lst->next, min_size))
-					return (1);
-				else
+			if (grid[x][y] == '.' || (lst->tetrimino)[0][0] == '.')
+				if (valid_pos(lst->tetrimino, grid, pos, min_size))
+				{
+					write_tetris(lst->tetrimino, grid, pos, lst->index + 64);
+					if (recurssion(grid, lst->next, min_size))
+						return (1);
 					write_tetris(lst->tetrimino, grid, pos, '.');
-			}
+				}
 		}
 	}
 	return (0);

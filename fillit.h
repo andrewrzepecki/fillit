@@ -6,14 +6,14 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 11:22:35 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/28 12:26:08 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/28 14:02:47 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
 
-# include "libft.h"
+# include "libft/libft.h"
 
 typedef struct		s_tetri
 {
