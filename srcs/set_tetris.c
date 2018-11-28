@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 13:58:41 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/28 13:00:03 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/28 13:47:42 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,5 @@ int				set_tetris(char **tetris, t_tetri **lst, int index)
 	tab_free(tmp);
 	free(tmp);
 	lst_add_back(lst, new);
-	tab_free(tetris);
 	return (1);
 }
