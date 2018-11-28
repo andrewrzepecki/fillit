@@ -13,7 +13,9 @@ algorithm, after parsing the content of the file into a linked
 list.
 
 --> 'make' to compile library and fillit sources into binary 'fillit'
+
 --> usage : ./fillit [valid tetriminos file]
+
 --> tetris_tests contains valid tetrominos file examples. Tetrominos
     must be SEPARATED by a '\n'. Any other content will be considered 
     invalid.
