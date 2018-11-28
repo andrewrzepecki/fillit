@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:01:03 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/27 18:23:25 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/28 11:46:00 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,7 @@ void		lst_add_back(t_tetri **lst, t_tetri *new)
 	t_tetri *current;
 
 	if (!(lst))
-	{
-		ft_putendl("lst_add_back error : lst is NULL");
 		return ;
-	}
 	if (!(*lst))
 	{
 		*lst = new;
@@ -72,10 +69,7 @@ void		lst_iter(t_tetri *lst, void (*f)(t_tetri *ielem))
 	t_tetri *cpy;
 
 	if (!(lst))
-	{
-		ft_putendl("lst_iter error : lst is NULL");
 		return ;
-	}
 	cpy = lst;
 	while (cpy)
 	{
@@ -84,23 +78,7 @@ void		lst_iter(t_tetri *lst, void (*f)(t_tetri *ielem))
 	}
 }
 
-void		print_node(t_tetri *lst)
-{
-	int i;
-
-	if (!(lst))
-	{
-		ft_putendl("print_node : WARNING, node is (null)");
-		return ;
-	}
-	i = -1;
-	ft_putstr("Tetrimino ");
-	ft_putnbr(lst->index);
-	ft_putendl(" : ");
-	ft_putstrtab(lst->tetrimino);
-}
-
-size_t	ft_lstlen(t_tetri *lst)
+size_t		ft_lstlen(t_tetri *lst)
 {
 	size_t	size;
 

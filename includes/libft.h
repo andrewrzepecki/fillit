@@ -6,7 +6,7 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 19:12:29 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/26 18:34:15 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/28 11:44:15 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,7 @@ int					ft_strupper(char const *s);
 
 int					ft_strlower(char const *s);
 
-int                 char_count(char *s, char c);
+int					char_count(char *s, char c);
 
 void				ft_putstrtab(char **tab);
 

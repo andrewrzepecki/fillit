@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   char_count.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
+/*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 01:02:12 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/24 01:07:32 by andrewrze        ###   ########.fr       */
+/*   Created: 2018/11/28 11:16:09 by ccepre            #+#    #+#             */
+/*   Updated: 2018/11/28 11:16:21 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     char_count(char *s, char c)
+int	char_count(char *s, char c)
 {
-    int i;
-    int count;
+	int i;
+	int count;
 
-    i = 0;
-    count = 0;
-    if (s)
-    {
-        while (s[i])
-        {
-            if (s[i] == c)
-                count++;
-            i++;
-        }
-    }
-    return (count);
+	i = 0;
+	count = 0;
+	if (s)
+	{
+		while (s[i])
+		{
+			if (s[i] == c)
+				count++;
+			i++;
+		}
+	}
+	return (count);
 }
