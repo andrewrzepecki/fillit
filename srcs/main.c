@@ -6,7 +6,7 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 14:23:13 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/27 19:42:30 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/27 22:35:06 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int		main(int ac, char **av)
 	if (ft_print_errors(ac, fd, ret))
 		return (1);
 	ft_print_solution(fillit_solver(lst));
+    while (1);
 	return (0);
 }
