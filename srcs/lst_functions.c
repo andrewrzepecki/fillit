@@ -6,31 +6,11 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:01:03 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/28 11:46:00 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/28 13:00:07 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-char		**tab_cpy(char **tab)
-{
-	char	**cpy;
-	int		i;
-
-	i = 0;
-	while (tab[i])
-		i++;
-	if (!(cpy = (char**)malloc(sizeof(char*) * (i + 1))))
-		return (NULL);
-	i = -1;
-	while (tab[++i])
-	{
-		if (!(cpy[i] = ft_strdup(tab[i])))
-			return (NULL);
-	}
-	cpy[i] = NULL;
-	return (cpy);
-}
 
 t_tetri		*lst_new(char **tetri, int index)
 {
@@ -89,4 +69,20 @@ size_t		ft_lstlen(t_tetri *lst)
 		lst = lst->next;
 	}
 	return (size);
+}
+
+void		lst_del(t_tetri **lst)
+{
+	t_tetri *tmp;
+
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		tab_free((*lst)->tetrimino);
+		free((*lst)->tetrimino);
+		free(*lst);
+		(*lst) = tmp;
+	}
+	free(lst);
+	lst = NULL;
 }

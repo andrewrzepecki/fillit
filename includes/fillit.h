@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 11:22:35 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/28 11:43:18 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/28 12:26:08 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ size_t				ft_lstlen(t_tetri *lst);
 void				tab_free(char **tab);
 int					ft_sqrt_sup(int n);
 void				ft_print_solution(char **solution);
+void				lst_del(t_tetri **lst);
 
 #endif

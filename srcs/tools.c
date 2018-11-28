@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   math.c                                             :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 17:47:57 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/27 19:02:34 by ccepre           ###   ########.fr       */
+/*   Created: 2018/11/28 12:16:46 by ccepre            #+#    #+#             */
+/*   Updated: 2018/11/28 12:42:39 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_sqrt_sup(int n)
+int				ft_sqrt_sup(int n)
 {
 	int c;
 
@@ -22,7 +22,7 @@ int		ft_sqrt_sup(int n)
 	return (c);
 }
 
-void	tab_free(char **tab)
+void			tab_free(char **tab)
 {
 	int i;
 
@@ -32,5 +32,24 @@ void	tab_free(char **tab)
 		free(tab[i]);
 		tab[i] = NULL;
 	}
-	free(tab);
+}
+
+char			**tab_cpy(char **tab)
+{
+	char	**cpy;
+	int		i;
+
+	i = 0;
+	while (tab[i])
+		i++;
+	if (!(cpy = (char**)malloc(sizeof(char*) * (i + 1))))
+		return (NULL);
+	i = -1;
+	while (tab[++i])
+	{
+		if (!(cpy[i] = ft_strdup(tab[i])))
+			return (NULL);
+	}
+	cpy[i] = NULL;
+	return (cpy);
 }

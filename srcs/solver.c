@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 16:37:12 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/28 11:08:40 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/28 12:27:18 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,6 @@ char		**fillit_solver(t_tetri **lst)
 		tab_free(grid);
 		grid = grid_init(min_size);
 	}
+	lst_del(lst);
 	return (grid);
 }
