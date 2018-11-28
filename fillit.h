@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 11:22:35 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/28 14:02:47 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/28 17:56:01 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int					check_tetris(char **tetris);
 size_t				ft_lstlen(t_tetri *lst);
 void				tab_free(char **tab);
 int					ft_sqrt_sup(int n);
-void				ft_print_solution(char **solution);
+int					ft_print_solution(char **solution);
 void				lst_del(t_tetri **lst);
 
 #endif

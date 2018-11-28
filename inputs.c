@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 13:56:17 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/28 13:46:58 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/28 17:47:10 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,7 @@ int				read_file(int fd, char *line, char **tetris, t_tetri **lst)
 			ft_strdel(&line);
 			return (-1);
 		}
-		if (ret != 0)
-			ft_strdel(&line);
+		ft_strdel(&line);
 	}
 	return (0);
 }
