@@ -11,24 +11,22 @@ Execution time was a constraint in this project, so implementing an optimal back
 
 ```
 git clone https://github.com/andrewrzepecki/fillit && cd fillit && make
-./fillit [file containing tetriminos]
 ```
 
 The program recieves a file containing valid tetriminos in this format:
 
-![fillit](png/tetris)
+![fillit](png/tetris_pieces.png)
 
-Comments "##start" and "##end" are necessary for defining the start and end points of the graph, and must be linked together.
+Tetriminos pieces must be 4x4 format, using '#' and '.' to form the piece, and must be seperated by a newline.
 
 **Example:**
 
 ```
-./lem-in < maps/big
+./fillit [tetris_pieces]
 ```
-![lem-in](https://i.ibb.co/7pSmxPM/Screen-Shot-2019-10-28-at-1-20-03-PM.png)
 
-[[ant number]-[current vertex]]
+![fillit](png/fillit_output.png)
 
-The first entry of the first line is [L0-99], meaning that the first ant goes to room "99", then [L1-806], the second ant goes to room "806"... 
+The tetriminos pieces are distinguished with their own unique character: 'A' for the first tetriminos supplied, 'B' for the second, 'C' for the third ...
 
-The rules of lem-in state that there can be only one ant in a room at a time and one can only visit a vertex once, which caused superposition problems that were fixed using a variation of Edmond-Karp's algorithm and graph theory.
+The concept of our algorithm is to recursively test each tetriminos, starting in an area the size of the sum of the given tetriminos areas.
